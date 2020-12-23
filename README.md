@@ -8,11 +8,12 @@
 
 ### 背景音频小程序切换到后台 仍可以播放：app.json 中配置：
 
-```requiredBackgroundModes": ["audio", "location"]
+```
+  requiredBackgroundModes": ["audio", "location"]
 
 ```
 
-## 遇到的问题：：
+## 遇到的问题：
 
 ### 涉及到音视频的小程序 必须是基于企业主题的小程序 个人主题的小程序审核不会通过
 
