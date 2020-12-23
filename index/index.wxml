@@ -1,0 +1,33 @@
+<!--pages/components/unitAudio/unitAudio.wxml-->
+<view class="audio page100">
+    <view class="audio-box">
+        <view class="audio-inner line-flex">
+            <image src="../images/audio.png" class="audio-icon {{audioState=='play'?'rotate-circle':''}}" ></image>
+            <view class="center">
+                <view class="class-title">{{this_audioInfo.title}}</view>
+                <view class="time-box line-flex">
+                    <text class="watch-time">{{current_process}}</text>
+                    <text class="all-time">{{showMax}}</text>
+                </view>
+                <slider class="slider" wx:if="{{sliderValue!=null}}"
+                    bindchange="hanle_slider_change" 
+                    bindtouchstart="handle_slider_move_start" 
+                    bindtouchend="handle_slider_move_end"   
+                    min="0" 
+                    step="0.000001"
+                    block-size="12" 
+                    max="{{this_audioInfo.courseTime}}" 
+                    activeColor="#fff" 
+                    backgroundColor="#E2E2E2" 
+                    value="{{sliderValue}}"
+                    disabled="{{this_audioInfo.isEnd?false:true}}"
+                />
+            </view>
+        </view>
+        <view  class="play-box line-flex">
+          <image src="../images/prev.png" class="prev-image" bindtap="changeAudio" data-type="prve"></image>
+          <image src="{{audioState=='pause'?'../images/play.png':'../images/pause.png'}}" class="{{audioState=='play'?'play':'pause'}}" bindtap="switchPlay"></image>
+          <image src="../images/next.png" class="next-image" bindtap="changeAudio" data-type="next"></image>
+        </view>
+    </view>
+</view>
